@@ -236,7 +236,7 @@ export default function App() {
               }}
             >
               <p className="text-xs font-medium" style={{ color: '#a78bfa' }}>Open to opportunities</p>
-              <p className="text-sm font-bold" style={{ color: '#e2e8f0' }}>Based in Kabul, Afghanistan</p>
+              <p className="text-sm font-bold" style={{ color: '#e2e8f0' }}>Based in Ireland</p>
             </div>
           </div>
         </div>
