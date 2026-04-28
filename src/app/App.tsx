@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Mail, Github, Linkedin, Code2, Briefcase, User, ChevronDown, Sparkles, ExternalLink, Heart } from 'lucide-react';
+import { Mail, Code2, Briefcase, User, ChevronDown, Sparkles, Heart, GraduationCap, Languages, Phone, MapPin } from 'lucide-react';
 import { Button } from './components/ui/button';
-import { ImageWithFallback } from './components/figma/ImageWithFallback';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -19,67 +18,90 @@ export default function App() {
     setActiveSection(sectionId);
   };
 
-  const skills = [
-    { name: 'React', level: 90 },
-    { name: 'TypeScript', level: 85 },
-    { name: 'JavaScript', level: 92 },
-    { name: 'Node.js', level: 80 },
-    { name: 'Python', level: 75 },
-    { name: 'Tailwind CSS', level: 95 },
-    { name: 'Next.js', level: 82 },
-    { name: 'PostgreSQL', level: 70 },
-    { name: 'Git', level: 88 },
-    { name: 'Figma', level: 85 },
-    { name: 'REST APIs', level: 87 },
-    { name: 'GraphQL', level: 72 },
-  ];
-
-  const projects = [
+  const competencies = [
     {
-      title: 'MindSpace – Mental Wellness App',
-      description: 'A calming full-stack wellness platform with mood tracking, guided meditation timers, and personalized insight reports.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
-      link: 'https://github.com/hamidaghulami'
+      title: 'Web Design and Development',
+      items: ['HTML', 'CSS', 'PHP', 'JavaScript', 'ASP.NET', 'WordPress', 'CodeIgniter', 'Adobe Dreamweaver'],
     },
     {
-      title: 'TalentBridge – Job Portal',
-      description: 'Smart job matching portal connecting Afghan professionals with global opportunities, featuring resume parsing and filters.',
-      tech: ['TypeScript', 'Next.js', 'PostgreSQL', 'Prisma'],
-      image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
-      link: 'https://github.com/hamidaghulami'
+      title: 'Graphic and Multimedia Design',
+      items: ['Adobe Photoshop', 'Adobe Premiere', 'Adobe Flash', 'Ulead Video Studio'],
     },
     {
-      title: 'EduVerse – Learning Platform',
-      description: 'Interactive e-learning platform with video courses, quizzes, progress tracking, and community discussion boards.',
-      tech: ['React', 'Express', 'MongoDB', 'Socket.io'],
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
-      link: 'https://github.com/hamidaghulami'
+      title: 'IT and Networking',
+      items: ['Network setup', 'Server hosting', 'Email creation', 'Security checks'],
     },
     {
-      title: 'NomadCart – E-Commerce',
-      description: 'Artisan marketplace celebrating Afghan crafts with multi-currency support, real-time inventory, and Stripe payments.',
-      tech: ['Next.js', 'Stripe', 'Supabase', 'Tailwind'],
-      image: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
-      link: 'https://github.com/hamidaghulami'
+      title: 'Hardware and Software Support',
+      items: ['Troubleshooting', 'Installation', 'Maintenance'],
     },
     {
-      title: 'DataPulse – Analytics Dashboard',
-      description: 'Real-time business intelligence dashboard with customizable widgets, export capabilities, and AI-powered trend detection.',
-      tech: ['React', 'D3.js', 'Python', 'FastAPI'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
-      link: 'https://github.com/hamidaghulami'
+      title: 'Office and Productivity Tools',
+      items: ['Microsoft Office Suite', 'Windows', 'Mac OS'],
     },
     {
-      title: 'GreenTrace – Eco Tracker',
-      description: 'Carbon footprint tracking app with gamification, community challenges, and personalized sustainability recommendations.',
-      tech: ['React Native', 'Firebase', 'TypeScript', 'Chart.js'],
-      image: 'https://images.unsplash.com/photo-1542601906897-12b0b6cfd908?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
-      link: 'https://github.com/hamidaghulami'
+      title: 'Digital Media Management',
+      items: ['Social media pages', 'Group management', 'Content creation'],
     },
   ];
 
-  const navLinks = ['home', 'about', 'skills', 'projects', 'contact'];
+  const workItems = [
+    {
+      title: 'Web Flow Web Designing Services (2021-2022)',
+      role: 'Web Developer and Designer',
+      points: [
+        'Designed responsive websites with HTML, CSS, PHP, JavaScript, and WordPress.',
+        'Implemented UI and UX improvements to improve user experience.',
+        'Managed hosting, server security, and email creation for clients.',
+        'Translated business needs into functional web solutions with clients.',
+      ],
+      highlights: ['Corporate website layouts', 'E-commerce templates', 'Portfolio branding sites'],
+      quote: 'Web Developer and Designer at Web Flow Web Designing Services.',
+    },
+    {
+      title: 'Multimedia and Graphic Design',
+      role: 'Creative Design Specialist',
+      points: [
+        'Built logo and brand identity assets for multiple use cases.',
+        'Designed social graphics and promotional banners.',
+        'Produced short video edits and multimedia presentations.',
+        'Created educational visual content for IT training.',
+      ],
+      highlights: ['Photoshop', 'Premiere', 'Flash', 'Ulead Video Studio'],
+      quote: 'Designing with Adobe Photoshop, Adobe Premiere, Adobe Flash, and Ulead Video Studio.',
+    },
+    {
+      title: 'Irshad High School (2018-2019)',
+      role: 'IT Instructor',
+      points: [
+        'Prepared lesson plans for computer literacy and web fundamentals.',
+        'Built visual teaching materials and practical lab exercises.',
+        'Trained students in operating systems, MS Office, and networking basics.',
+      ],
+      highlights: ['IT instruction', 'Teaching materials', 'Hands-on training'],
+      quote: 'IT instructor at Irshad High School from 20 March 2018 to 20 March 2019.',
+    },
+    {
+      title: 'Independent Election Commission of Afghanistan (2019-2020)',
+      role: 'Bayometric Employee and Admin Writer',
+      points: [
+        'Prepared official documents, reports, and digital records.',
+        'Handled biometric systems and data entry workflows.',
+        'Supported IT operations during election process periods.',
+      ],
+      highlights: ['Documentation', 'Biometric workflows', 'Operational IT support'],
+      quote: 'Admin writer at the Independent Election Commission of Afghanistan.',
+    },
+  ];
+
+  const strengths = [
+    'Strong interpersonal and communication skills.',
+    'Excellent time and project management.',
+    'Able to work independently or in collaborative teams.',
+    'Fast learner with adaptability to new technologies.',
+  ];
+
+  const navLinks = ['home', 'about', 'competencies', 'work', 'contact'];
 
   return (
     <div className="size-full overflow-y-auto" style={{ background: '#0f0f1a', color: '#e2e8f0' }}>
@@ -151,12 +173,12 @@ export default function App() {
               <span style={{ color: '#e2e8f0' }}>Ghulami</span>
             </h1>
             <p className="text-lg mb-10 leading-relaxed" style={{ color: '#94a3b8', maxWidth: 480 }}>
-              I craft purposeful digital experiences — blending clean code with thoughtful design
-              to build products that empower users and make a real impact.
+              Computer Science graduate blending creativity with technical precision across web development,
+              multimedia design, IT instruction, and administrative technology roles.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button
-                onClick={() => scrollToSection('projects')}
+                onClick={() => scrollToSection('work')}
                 size="lg"
                 className="font-semibold px-8"
                 style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', border: 'none', color: '#fff' }}
@@ -183,13 +205,21 @@ export default function App() {
                 height: 400,
                 boxShadow: '0 0 60px rgba(124,58,237,0.35)',
                 border: '2px solid rgba(167,139,250,0.25)',
+                background: 'linear-gradient(135deg, rgba(124,58,237,0.25), rgba(56,189,248,0.15))',
               }}
             >
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800"
-                alt="Hamida Ghulami"
-                className="w-full h-full object-cover"
-              />
+              <div className="w-full h-full flex items-center justify-center">
+                <div
+                  className="rounded-full size-48 flex items-center justify-center text-7xl font-extrabold"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(124,58,237,0.45), rgba(56,189,248,0.45))',
+                    color: '#f8fafc',
+                    border: '1px solid rgba(255,255,255,0.2)',
+                  }}
+                >
+                  HG
+                </div>
+              </div>
               {/* Overlay gradient */}
               <div
                 className="absolute inset-0"
@@ -206,7 +236,7 @@ export default function App() {
               }}
             >
               <p className="text-xs font-medium" style={{ color: '#a78bfa' }}>Open to opportunities</p>
-              <p className="text-sm font-bold" style={{ color: '#e2e8f0' }}>📍 Available Worldwide</p>
+              <p className="text-sm font-bold" style={{ color: '#e2e8f0' }}>Based in Kabul, Afghanistan</p>
             </div>
           </div>
         </div>
@@ -233,25 +263,24 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-lg mb-6 leading-relaxed" style={{ color: '#94a3b8' }}>
-                I'm a passionate full-stack developer with 4+ years of experience crafting scalable,
-                user-centric web applications. I specialize in React and Node.js ecosystems,
-                with an eye for design and an obsession for clean, maintainable code.
+                I am Hamida Gholami, a Computer Science graduate with a strong foundation in web development,
+                multimedia design, IT instruction, and administrative technology roles.
               </p>
               <p className="text-lg mb-6 leading-relaxed" style={{ color: '#94a3b8' }}>
-                Driven by purpose, I love building technology that bridges gaps — whether for education,
-                business, or social impact. My background spans frontend artistry to backend architecture.
+                My work blends creativity with technical precision, shaped by hands-on experience in education,
+                multimedia design, and professional web design services.
               </p>
               <p className="text-lg leading-relaxed" style={{ color: '#94a3b8' }}>
-                When I'm not shipping code, I'm learning new technologies, mentoring aspiring developers,
-                or hiking somewhere with a good view and even better Wi-Fi.
+                With a TOEFL score of 101, strong communication skills, and fluency in English, Farsi, and Pashto,
+                I bring both technical expertise and cross-cultural communication strength to every team and classroom.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: '4+', label: 'Years Experience' },
-                { value: '20+', label: 'Projects Delivered' },
-                { value: '10+', label: 'Happy Clients' },
-                { value: '∞', label: 'Lines of Code' },
+                { value: '101', label: 'TOEFL Score' },
+                { value: '3', label: 'Languages' },
+                { value: '4+', label: 'Role Areas' },
+                { value: '2018+', label: 'Professional Track' },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -267,32 +296,31 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Skills ── */}
-      <section id="skills" className="py-24 px-6">
+      {/* ── Core Competencies ── */}
+      <section id="competencies" className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-3 mb-12">
             <Code2 className="w-7 h-7" style={{ color: '#38bdf8' }} />
-            <h2 className="text-4xl font-bold">Skills & Technologies</h2>
+            <h2 className="text-4xl font-bold">Core Competencies</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {skills.map((skill) => (
+            {competencies.map((group) => (
               <div
-                key={skill.name}
+                key={group.title}
                 className="rounded-2xl p-5"
                 style={{ background: 'rgba(15,15,26,0.6)', border: '1px solid rgba(56,189,248,0.15)' }}
               >
-                <div className="flex justify-between items-center mb-3">
-                  <span className="font-semibold" style={{ color: '#e2e8f0' }}>{skill.name}</span>
-                  <span className="text-xs font-bold" style={{ color: '#38bdf8' }}>{skill.level}%</span>
-                </div>
-                <div className="rounded-full h-1.5 overflow-hidden" style={{ background: 'rgba(56,189,248,0.1)' }}>
-                  <div
-                    className="h-full rounded-full"
-                    style={{
-                      width: `${skill.level}%`,
-                      background: 'linear-gradient(90deg, #7c3aed, #38bdf8)',
-                    }}
-                  />
+                <h3 className="font-semibold mb-3" style={{ color: '#e2e8f0' }}>{group.title}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="text-xs px-3 py-1 rounded-full font-medium"
+                      style={{ background: 'rgba(56,189,248,0.16)', color: '#bae6fd', border: '1px solid rgba(56,189,248,0.2)' }}
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
@@ -300,21 +328,21 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Projects ── */}
+      {/* ── Selected Work ── */}
       <section
-        id="projects"
+        id="work"
         className="py-24 px-6"
         style={{ background: 'rgba(139,92,246,0.04)' }}
       >
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-12">
             <Briefcase className="w-7 h-7" style={{ color: '#a78bfa' }} />
-            <h2 className="text-4xl font-bold">Featured Projects</h2>
+            <h2 className="text-4xl font-bold">Selected Creative and Technical Work</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-            {projects.map((project) => (
+          <div className="grid md:grid-cols-2 gap-7">
+            {workItems.map((item) => (
               <div
-                key={project.title}
+                key={item.title}
                 className="rounded-2xl overflow-hidden group transition-all duration-300"
                 style={{
                   background: 'rgba(15,15,26,0.7)',
@@ -330,38 +358,77 @@ export default function App() {
                   (e.currentTarget as HTMLElement).style.border = '1px solid rgba(167,139,250,0.15)';
                 }}
               >
-                <div className="aspect-video overflow-hidden relative">
-                  <ImageWithFallback
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300"
-                    style={{ background: 'rgba(124,58,237,0.7)' }}
-                  >
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-8 h-8 text-white" />
-                    </a>
-                  </div>
-                </div>
                 <div className="p-6">
-                  <h3 className="font-bold text-lg mb-2" style={{ color: '#e2e8f0' }}>{project.title}</h3>
-                  <p className="text-sm mb-4 leading-relaxed" style={{ color: '#64748b' }}>{project.description}</p>
+                  <h3 className="font-bold text-lg mb-1" style={{ color: '#e2e8f0' }}>{item.title}</h3>
+                  <p className="text-sm mb-4" style={{ color: '#a78bfa' }}>{item.role}</p>
+                  <ul className="text-sm mb-4 leading-relaxed space-y-2" style={{ color: '#94a3b8' }}>
+                    {item.points.map((point) => (
+                      <li key={point}>- {point}</li>
+                    ))}
+                  </ul>
                   <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
+                    {item.highlights.map((tag) => (
                       <span
-                        key={tech}
+                        key={tag}
                         className="text-xs px-3 py-1 rounded-full font-medium"
                         style={{ background: 'rgba(124,58,237,0.2)', color: '#a78bfa', border: '1px solid rgba(167,139,250,0.2)' }}
                       >
-                        {tech}
+                        {tag}
                       </span>
                     ))}
                   </div>
+                  <p className="text-xs mt-4 italic" style={{ color: '#64748b' }}>
+                    {item.quote}
+                  </p>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Strengths and Additional Info ── */}
+      <section id="strengths" className="py-24 px-6">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-7">
+          <div
+            className="rounded-2xl p-7"
+            style={{ background: 'rgba(15,15,26,0.6)', border: '1px solid rgba(56,189,248,0.15)' }}
+          >
+            <div className="flex items-center gap-3 mb-5">
+              <Languages className="w-6 h-6" style={{ color: '#38bdf8' }} />
+              <h3 className="text-2xl font-bold">Professional Strengths</h3>
+            </div>
+            <ul className="space-y-3" style={{ color: '#94a3b8' }}>
+              {strengths.map((entry) => (
+                <li key={entry}>- {entry}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div
+            className="rounded-2xl p-7"
+            style={{ background: 'rgba(15,15,26,0.6)', border: '1px solid rgba(167,139,250,0.2)' }}
+          >
+            <div className="flex items-center gap-3 mb-5">
+              <GraduationCap className="w-6 h-6" style={{ color: '#a78bfa' }} />
+              <h3 className="text-2xl font-bold">Additional Academic Offer</h3>
+            </div>
+            <p style={{ color: '#94a3b8' }}>
+              In 2022, I received an offer from the University of Limerick for a program in DevOps and Data Analytics.
+              At that time, I prioritized work commitments and could not pursue the program.
+            </p>
+          </div>
+
+          <div
+            className="rounded-2xl p-7 lg:col-span-2"
+            style={{ background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(167,139,250,0.2)' }}
+          >
+            <h3 className="text-2xl font-bold mb-4">References</h3>
+            <ul className="space-y-3" style={{ color: '#cbd5e1' }}>
+              <li>- Zia Ahmad Nikzad, Secretariat Office Director, Independent Election Commission of Afghanistan.</li>
+              <li>- Ruhullah Fasihi, CEO and Founder, Web Flow Web Designing Services.</li>
+              <li>- References available upon request.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -374,8 +441,8 @@ export default function App() {
             <h2 className="text-4xl font-bold">Let's Connect</h2>
           </div>
           <p className="text-lg mb-12" style={{ color: '#94a3b8' }}>
-            I'm always excited about new projects, collaborations, and conversations.
-            Drop me a message — I'd love to hear from you.
+            This portfolio reflects my journey as a creative technologist, combining design, development,
+            IT expertise, and communication skills. I am committed to high-quality digital solutions and continuous growth.
           </p>
 
           <div
@@ -386,10 +453,10 @@ export default function App() {
               boxShadow: '0 0 60px rgba(124,58,237,0.15)',
             }}
           >
-            <p className="text-2xl font-bold mb-2" style={{ color: '#a78bfa' }}>hamida.ghulami@email.com</p>
-            <p className="text-sm mb-8" style={{ color: '#64748b' }}>Response guaranteed within 24 hours</p>
+            <p className="text-2xl font-bold mb-2" style={{ color: '#a78bfa' }}>HamidaGholami90@gmail.com</p>
+            <p className="text-sm mb-8" style={{ color: '#64748b' }}>Available for projects, training, and consulting</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="mailto:hamida.ghulami@email.com">
+              <a href="mailto:HamidaGholami90@gmail.com">
                 <Button
                   size="lg"
                   className="gap-2 font-semibold"
@@ -399,28 +466,24 @@ export default function App() {
                   Send Email
                 </Button>
               </a>
-              <a href="https://github.com/hamidaghulami" target="_blank" rel="noopener noreferrer">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="gap-2 font-semibold"
-                  style={{ borderColor: '#a78bfa', color: '#a78bfa', background: 'transparent' }}
-                >
-                  <Github className="w-5 h-5" />
-                  GitHub
-                </Button>
-              </a>
-              <a href="https://linkedin.com/in/hamidaghulami" target="_blank" rel="noopener noreferrer">
+              <a href="tel:+93789535272">
                 <Button
                   size="lg"
                   variant="outline"
                   className="gap-2 font-semibold"
                   style={{ borderColor: '#38bdf8', color: '#38bdf8', background: 'transparent' }}
                 >
-                  <Linkedin className="w-5 h-5" />
-                  LinkedIn
+                  <Phone className="w-5 h-5" />
+                  +93 (0) 789 535 272
                 </Button>
               </a>
+              <div
+                className="px-4 py-3 rounded-xl flex items-center gap-2"
+                style={{ border: '1px solid rgba(148,163,184,0.35)', color: '#cbd5e1' }}
+              >
+                <MapPin className="w-4 h-4" />
+                Dasht-e-Barchi, Kabul, Afghanistan
+              </div>
             </div>
           </div>
         </div>
