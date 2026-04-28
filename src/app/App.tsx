@@ -425,8 +425,6 @@ export default function App() {
           >
             <h3 className="text-2xl font-bold mb-4">References</h3>
             <ul className="space-y-3" style={{ color: '#cbd5e1' }}>
-              <li>- Zia Ahmad Nikzad, Secretariat Office Director, Independent Election Commission of Afghanistan.</li>
-              <li>- Ruhullah Fasihi, CEO and Founder, Web Flow Web Designing Services.</li>
               <li>- References available upon request.</li>
             </ul>
           </div>
