@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, Code2, Briefcase, User, ChevronDown, Sparkles, Heart, GraduationCap, Languages, Phone, MapPin } from 'lucide-react';
+import { Mail, Code2, Briefcase, User, ChevronDown, Sparkles, Heart, GraduationCap, Languages, MapPin } from 'lucide-react';
 import { Button } from './components/ui/button';
 
 export default function App() {
@@ -466,23 +466,12 @@ export default function App() {
                   Send Email
                 </Button>
               </a>
-              <a href="tel:+93789535272">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="gap-2 font-semibold"
-                  style={{ borderColor: '#38bdf8', color: '#38bdf8', background: 'transparent' }}
-                >
-                  <Phone className="w-5 h-5" />
-                  +93 (0) 789 535 272
-                </Button>
-              </a>
               <div
                 className="px-4 py-3 rounded-xl flex items-center gap-2"
                 style={{ border: '1px solid rgba(148,163,184,0.35)', color: '#cbd5e1' }}
               >
                 <MapPin className="w-4 h-4" />
-                Dasht-e-Barchi, Kabul, Afghanistan
+                Limerick, Ireland
               </div>
             </div>
           </div>
